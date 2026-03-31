@@ -65,10 +65,10 @@ graph TD;
 
     User -- "PDF / Image / Voice" --> UI
     
-    subgraph 🛡️ Nidaan Backend Engine (FastAPI)
+    subgraph backend ["🛡️ Nidaan Backend Engine (FastAPI)"]
         API[⚡ API Gateway]:::core
         
-        subgraph 🦑 Multi-Agent Swarm
+        subgraph swarm ["🦑 Multi-Agent Swarm"]
             A1[📄 Extractor Agent\n(Strict JSON Schema)]:::agent
             A2[🧠 Analyst Agent\n(Severity & Insights)]:::agent
             A3[⏳ Longitudinal Agent\n(Historical Compare)]:::agent
@@ -83,7 +83,7 @@ graph TD;
 
     UI --> API
     
-    subgraph 🗄️ Secure EHR Vault
+    subgraph vault ["🗄️ Secure EHR Vault"]
         DB[(Supabase PostgreSQL\nRow-Level Security)]:::db
         Store[📁 Secure Cloud Storage]:::db
     end
