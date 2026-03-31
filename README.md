@@ -60,19 +60,19 @@ graph TD;
     classDef db fill:#2f2f2f,stroke:#3b82f6,stroke-width:2px,color:#ececec;
     classDef core fill:#2f2f2f,stroke:#ef4444,stroke-width:2px,color:#ececec;
 
-    User((👤 User Input)):::user
-    UI[🖥️ React Frontend\nPremium Glassmorphism]:::user
+    User(("👤 User Input")):::user
+    UI["🖥️ React Frontend\nPremium Glassmorphism"]:::user
 
     User -- "PDF / Image / Voice" --> UI
     
     subgraph backend ["🛡️ Nidaan Backend Engine (FastAPI)"]
-        API[⚡ API Gateway]:::core
+        API["⚡ API Gateway"]:::core
         
         subgraph swarm ["🦑 Multi-Agent Swarm"]
-            A1[📄 Extractor Agent\n(Strict JSON Schema)]:::agent
-            A2[🧠 Analyst Agent\n(Severity & Insights)]:::agent
-            A3[⏳ Longitudinal Agent\n(Historical Compare)]:::agent
-            A4[🌍 Localization Agent\n(Native Translation)]:::agent
+            A1["📄 Extractor Agent\n(Strict JSON Schema)"]:::agent
+            A2["🧠 Analyst Agent\n(Severity & Insights)"]:::agent
+            A3["⏳ Longitudinal Agent\n(Historical Compare)"]:::agent
+            A4["🌍 Localization Agent\n(Native Translation)"]:::agent
         end
         
         API --> A1
@@ -84,8 +84,8 @@ graph TD;
     UI --> API
     
     subgraph vault ["🗄️ Secure EHR Vault"]
-        DB[(Supabase PostgreSQL\nRow-Level Security)]:::db
-        Store[📁 Secure Cloud Storage]:::db
+        DB[("Supabase PostgreSQL\nRow-Level Security")]:::db
+        Store["📁 Secure Cloud Storage"]:::db
     end
 
     A1 -. "Save Raw Metrics" .-> DB
@@ -105,10 +105,10 @@ graph TD;
 sequenceDiagram
     autonumber
     actor Patient
-    participant Interface as Frontend (React)
-    participant Core as API (FastAPI)
-    participant Swarm as Agent Swarm
-    participant Vault as Database (Supabase)
+    participant Interface as "Frontend (React)"
+    participant Core as "API (FastAPI)"
+    participant Swarm as "Agent Swarm"
+    participant Vault as "Database (Supabase)"
 
     Patient->>Interface: Uploads `Thyroid_Report.pdf`
     Interface->>Core: Secure HTTPS POST
